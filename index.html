@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 플랫폼 | goropak</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        /* 네비게이션 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10,10,10,0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4a9eff;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #4a9eff;
+        }
+        /* 히어로 섹션 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #4a9eff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 20px;
+            color: #888;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+        .cta-button {
+            padding: 15px 40px;
+            background: linear-gradient(90deg, #4a9eff, #a855f7);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(74, 158, 255, 0.3);
+        }
+        /* 갤러리 섹션 */
+        .section {
+            padding: 100px 50px;
+        }
+        .section-title {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .gallery-item .info {
+            padding: 20px;
+        }
+        .gallery-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .gallery-item p {
+            color: #888;
+            font-size: 14px;
+        }
+        /* 소개 섹션 */
+        .about {
+            background: #111;
+            text-align: center;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: #aaa;
+        }
+        /* 푸터 */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #0a0a0a;
+            color: #666;
+            font-size: 14px;
+        }
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; }
+            nav { padding: 15px 20px; }
+            .nav-links a { margin-left: 15px; font-size: 12px; }
+            .section { padding: 60px 20px; }
+            .section-title { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">AI Platform</div>
+        <div class="nav-links">
+            <a href="#gallery">갤러리</a>
+            <a href="#about">소개</a>
+            <a href="#contact">연락처</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>AI로 만드는 새로운 세계</h1>
+        <p>다양한 AI 도구로 만든 창작물을 공유합니다. 이미지, 영상, 텍스트 등 AI의 무한한 가능성을 탐험해보세요.</p>
+        <a href="#gallery" class="cta-button">작품 보기</a>
+    </section>
+
+    <section id="gallery" class="section">
+        <h2 class="section-title">AI 갤러리</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=1" alt="AI 작품 1">
+                <div class="info">
+                    <h3>AI 이미지 생성</h3>
+                    <p>Midjourney로 만든 작품</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=2" alt="AI 작품 2">
+                <div class="info">
+                    <h3>AI 아트워크</h3>
+                    <p>DALL-E로 만든 작품</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=3" alt="AI 작품 3">
+                <div class="info">
+                    <h3>AI 디자인</h3>
+                    <p>Stable Diffusion 작품</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=4" alt="AI 작품 4">
+                <div class="info">
+                    <h3>AI 컨셉아트</h3>
+                    <p>다양한 AI 도구 활용</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=5" alt="AI 작품 5">
+                <div class="info">
+                    <h3>AI 일러스트</h3>
+                    <p>창의적인 AI 작품</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/400/300?random=6" alt="AI 작품 6">
+                <div class="info">
+                    <h3>AI 프로젝트</h3>
+                    <p>실험적인 AI 결과물</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <h2 class="section-title">About</h2>
+        <p>안녕하세요! AI 기술에 관심이 많은 크리에이터입니다. 다양한 AI 도구들을 활용하여 새로운 창작물을 만들고 공유합니다. ChatGPT, Midjourney, DALL-E, Stable Diffusion 등 최신 AI 기술을 탐구하고 있습니다.</p>
+    </section>
+
+    <footer id="contact">
+        <p>© 2026 AI Platform by goropak. All rights reserved.</p>
+        <p style="margin-top: 10px;">Contact: your-email@example.com</p>
+    </footer>
+</body>
+</html>
