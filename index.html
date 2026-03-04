@@ -5,187 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Business Hub</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.8;
-        }
-        /* 네비게이션 */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10,10,10,0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid #222;
-        }
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            color: #4a9eff;
-            letter-spacing: -0.5px;
-        }
-        .nav-links a {
-            color: #aaa;
-            text-decoration: none;
-            margin-left: 35px;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #ffffff;
-        }
-        /* 히어로 섹션 */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(180deg, #0a0a0a 0%, #0d1117 50%, #0a0a0a 100%);
-            padding: 0 20px;
-        }
-        .hero h1 {
-            font-size: 52px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            background: linear-gradient(90deg, #4a9eff, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.3;
-        }
-        .hero p {
-            font-size: 18px;
-            color: #888;
-            max-width: 700px;
-            margin-bottom: 45px;
-            line-height: 1.9;
-        }
-        .cta-button {
-            padding: 16px 45px;
-            background: linear-gradient(90deg, #4a9eff, #a855f7);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 15px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(74, 158, 255, 0.25);
-        }
-        /* 프로젝트 섹션 */
-        .section {
-            padding: 120px 50px;
-        }
-        .section-title {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 70px;
-            font-weight: 600;
-        }
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 40px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .project-card {
-            background: linear-gradient(145deg, #141414, #1a1a1a);
-            border: 1px solid #252525;
-            border-radius: 16px;
-            padding: 45px;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: #4a9eff;
-        }
-        .project-card h3 {
-            font-size: 22px;
-            margin-bottom: 20px;
-            color: #fff;
-            font-weight: 600;
-        }
-        .project-card p {
-            color: #999;
-            font-size: 15px;
-            line-height: 1.9;
-        }
-        .card-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #4a9eff, #a855f7);
-            border-radius: 12px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-        }
-        /* 소개 섹션 */
-        .about {
-            background: #0d0d0d;
-            text-align: center;
-            border-top: 1px solid #1a1a1a;
-            border-bottom: 1px solid #1a1a1a;
-        }
-        .about p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 17px;
-            color: #999;
-            line-height: 2;
-        }
-        /* 푸터 */
-        footer {
-            text-align: center;
-            padding: 50px;
-            background: #0a0a0a;
-            color: #555;
-            font-size: 13px;
-        }
-        footer a {
-            color: #4a9eff;
-            text-decoration: none;
-        }
-        /* 반응형 */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 15px; }
-            nav { padding: 15px 20px; }
-            .nav-links a { margin-left: 20px; font-size: 12px; }
-            .section { padding: 80px 20px; }
-            .section-title { font-size: 26px; }
-            .projects { grid-template-columns: 1fr; }
-            .project-card { padding: 30px; }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,sans-serif;background:#0a0a0a;color:#fff;line-height:1.8;}
+        nav{position:fixed;top:0;width:100%;padding:20px 50px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);z-index:1000;border-bottom:1px solid #222;}
+        .logo{font-size:22px;font-weight:700;color:#4a9eff;letter-spacing:-.5px;}
+        .nav-links a{color:#aaa;text-decoration:none;margin-left:35px;font-size:14px;transition:color .3s;}
+        .nav-links a:hover{color:#fff;}
+        .hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(180deg,#0a0a0a 0%,#0d1117 50%,#0a0a0a 100%);padding:0 20px;}
+        .hero h1{font-size:52px;font-weight:700;margin-bottom:25px;background:linear-gradient(90deg,#4a9eff,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .hero p{font-size:18px;color:#888;max-width:700px;margin-bottom:45px;}
+        .cta-button{padding:16px 45px;background:linear-gradient(90deg,#4a9eff,#a855f7);color:white;text-decoration:none;border-radius:8px;font-weight:600;font-size:15px;transition:transform .3s,box-shadow .3s;}
+        .cta-button:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(74,158,255,.25);}
+        .section{padding:120px 50px;}
+        .section-title{font-size:36px;text-align:center;margin-bottom:70px;font-weight:600;}
+        .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(450px,1fr));gap:40px;max-width:1100px;margin:0 auto;}
+        .project-card{display:block;background:linear-gradient(145deg,#141414,#1a1a1a);border:1px solid #252525;border-radius:16px;padding:45px;transition:transform .3s,border-color .3s;text-decoration:none;color:inherit;}
+        .project-card:hover{transform:translateY(-8px);border-color:#4a9eff;}
+        .project-card h3{font-size:22px;margin-bottom:20px;color:#fff;font-weight:600;}
+        .project-card p{color:#999;font-size:15px;line-height:1.9;}
+        .card-icon{width:50px;height:50px;background:linear-gradient(135deg,#4a9eff,#a855f7);border-radius:12px;margin-bottom:25px;display:flex;align-items:center;justify-content:center;font-size:24px;}
+        .about{background:#0d0d0d;text-align:center;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;}
+        .about p{max-width:800px;margin:0 auto;font-size:17px;color:#999;line-height:2;}
+        footer{text-align:center;padding:50px;background:#0a0a0a;color:#555;font-size:13px;}
+        footer a{color:#4a9eff;text-decoration:none;}
+        @media(max-width:768px){
+            .hero h1{font-size:32px;}
+            .hero p{font-size:15px;}
+            nav{padding:15px 20px;}
+            .nav-links a{margin-left:20px;font-size:12px;}
+            .section{padding:80px 20px;}
+            .section-title{font-size:26px;}
+            .projects{grid-template-columns:1fr;}
+            .project-card{padding:30px;}
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="logo">AI Business Hub</div>
-       <div class="nav-links">
-    <a href="#projects">프로젝트</a>
-    <a href="#about">소개</a>
-    <a href="https://ai-business-hub.super.site" target="_blank">블로그</a>
-    <a href="#contact">연락처</a>
-</div>
+        <div class="nav-links">
+            <a href="#projects">프로젝트</a>
+            <a href="#about">소개</a>
+            <a href="https://ai-business-hub.super.site" target="_blank">블로그</a>
+            <a href="#contact">연락처</a>
+        </div>
     </nav>
 
     <section class="hero">
@@ -197,17 +60,16 @@
     <section id="projects" class="section">
         <h2 class="section-title">핵심 프로젝트</h2>
         <div class="projects">
-<a href="https://ai-business-hub.super.site/투자-실무-자동화" target="_blank" class="project-card" style="text-decoration: none; color: inherit;">
-    <div class="card-icon">⚙️</div>
-    <h3>실무 프로세스 및 기획 자동화</h3>
-    <p>플랜트 엔지니어링 기술 검토 및 복잡한 제조업 경영 지원 서류 업무를 자동화합니다. 탑다운(Top-down) 논리 구조에 기반한 보고서 및 슬라이드 개요를 생성하여 사내 업무의 효율성과 정확도를 극대화합니다.</p>
-</a>
-
-<a href="https://ai-business-hub.super.site/비즈니스-운영-및-마케팅" target="_blank" class="project-card" style="text-decoration: none; color: inherit;">
-    <div class="card-icon">📈</div>
-    <h3>비즈니스 운영 및 마케팅 고도화</h3>
-    <p>무인 오프라인 매장의 운영 관리 및 고객 응대 시스템을 구축합니다. 동시에 지역 상권 맞춤형 그로스 마케팅과 제조업의 신규 바이어 발굴을 위한 B2B 영업 마케팅 전략을 기획하여 비즈니스 성장을 견인합니다.</p>
-</a>
+            <a href="https://ai-business-hub.super.site/투자-실무-자동화" target="_blank" class="project-card">
+                <div class="card-icon">⚙️</div>
+                <h3>실무 프로세스 및 기획 자동화</h3>
+                <p>플랜트 엔지니어링 기술 검토 및 복잡한 제조업 경영 지원 서류 업무를 자동화합니다. 탑다운(Top-down) 논리 구조에 기반한 보고서 및 슬라이드 개요를 생성하여 사내 업무의 효율성과 정확도를 극대화합니다.</p>
+            </a>
+            <a href="https://ai-business-hub.super.site/비즈니스-운영-및-마케팅" target="_blank" class="project-card">
+                <div class="card-icon">📈</div>
+                <h3>비즈니스 운영 및 마케팅 고도화</h3>
+                <p>무인 오프라인 매장의 운영 관리 및 고객 응대 시스템을 구축합니다. 동시에 지역 상권 맞춤형 그로스 마케팅과 제조업의 신규 바이어 발굴을 위한 B2B 영업 마케팅 전략을 기획하여 비즈니스 성장을 견인합니다.</p>
+            </a>
         </div>
     </section>
 
@@ -218,7 +80,7 @@
 
     <footer id="contact">
         <p>© 2026 AI Business Hub. All rights reserved.</p>
-        <p style="margin-top: 15px;">문의: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p style="margin-top:15px;">문의: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
     </footer>
 </body>
 </html>
